@@ -1,5 +1,6 @@
 package com.moringaschool.myresturant;
 
+import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import android.widget.TextView;
 
@@ -19,7 +20,7 @@ import org.robolectric.RobolectricTestRunner;
         }
         public void validateTextViewContent(){
             TextView appNameTextView = activity.findViewById(R.id.appNameTextView);
-            assertTrue("MyRestaurants".equals(appNameTextView.getText().toString()));
+            assertEquals("MyRestaurants", appNameTextView.getText().toString());
         }
 
     }
