@@ -1,4 +1,4 @@
-package com.moringaschool.myresturant;
+package com.moringaschool.myresturant.model;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,22 +8,26 @@ import android.util.Log;
 import android.view.View;
 import android.widget.*;
 //import android.widget.EditText;
-import android.widget.Toast;
+
+import com.moringaschool.myresturant.R;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
     @BindView(R.id.mLocationEditText) EditText mLocationEditText;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
-    public static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = RestaurantsActivity.class.getSimpleName();
+//    public static final String TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mLocationEditText = (EditText) findViewById(R.id.mLocationEditText);
-        mFindRestaurantsButton = (Button)findViewById(R.id.findRestaurantsButton);
+        ButterKnife.bind(this);
+//        mLocationEditText = (EditText) findViewById(R.id.mLocationEditText);
+//        mFindRestaurantsButton = (Button)findViewById(R.id.findRestaurantsButton);
         mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
 
             @Override

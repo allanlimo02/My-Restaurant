@@ -4,6 +4,8 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertTrue;
 import android.widget.TextView;
 
+import com.moringaschool.myresturant.model.MainActivity;
+
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
