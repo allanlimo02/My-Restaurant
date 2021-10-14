@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.myresturant">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyResturant">
-        <activity android:name=".model.RestaurantsActivity">
+        <activity
+            android:name=".ui.RestaurantDetailActivity"
+            android:exported="true" />
+        <activity android:name=".model.RestaurantListActivity">
             android:exported="true"
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.myresturant.model.MainActivity"></meta-data>
+                android:value="com.moringaschool.myresturant.model.MainActivity" />
         </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.moringaschool.myresturant.model.MainActivity"></meta-data>
+            android:value="com.moringaschool.myresturant.model.MainActivity" />
 
         <activity
             android:name=".model.MainActivity"

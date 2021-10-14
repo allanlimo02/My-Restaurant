@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
     @BindView(R.id.mLocationEditText) EditText mLocationEditText;
     @BindView(R.id.appNameTextView) TextView mAppNameTextView;
-    private static final String TAG = RestaurantsActivity.class.getSimpleName();
+    private static final String TAG = RestaurantListActivity.class.getSimpleName();
 //    public static final String TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +30,16 @@ public class MainActivity extends AppCompatActivity {
 //        mFindRestaurantsButton = (Button)findViewById(R.id.findRestaurantsButton);
         mFindRestaurantsButton.setOnClickListener(new View.OnClickListener() {
 
+
             @Override
             public void onClick(View v) {
                 String location = mLocationEditText.getText().toString();
                 Log.d(TAG, location);
-                Intent intent = new Intent(MainActivity.this, RestaurantsActivity.class);
+                Intent intent = new Intent(MainActivity.this, RestaurantListActivity.class);
                 startActivity(intent);
-//                Toast.makeText(MainActivity.this, location, Toast.LENGTH_LONG).show();
                 intent.putExtra("location", location);
                 startActivity(intent);
+
             }
 
             //preparing java code to handle user input from locationInput
