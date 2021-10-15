@@ -47,7 +47,6 @@ public class RestaurantDetailFragment extends Fragment {
         return restaurantDetailFragment;
     }
 
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,12 +67,6 @@ public class RestaurantDetailFragment extends Fragment {
 
         for (Category category: mRestaurant.getCategories()) {
             categories.add(category.getTitle());
-
-            //setting onClickListener
-            mWebsiteLabel.setOnClickListener((View.OnClickListener) this);
-            mPhoneLabel.setOnClickListener((View.OnClickListener) this);
-            mAddressLabel.setOnClickListener((View.OnClickListener) this);
-            return view;
         }
 
         mNameLabel.setText(mRestaurant.getName());
@@ -82,10 +75,8 @@ public class RestaurantDetailFragment extends Fragment {
         mPhoneLabel.setText(mRestaurant.getPhone());
         mAddressLabel.setText(mRestaurant.getLocation().toString());
 
-
         return view;
     }
-    //OnClickListener
 
 
 }
