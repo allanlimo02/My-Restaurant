@@ -1,5 +1,5 @@
 
-package com.moringaschool.myresturant.ui;
+package com.moringaschool.myresturant.model;
 
 import java.util.List;
 import javax.annotation.Generated;
@@ -7,6 +7,9 @@ import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 @Generated("jsonschema2pojo")
 public class Business {
 

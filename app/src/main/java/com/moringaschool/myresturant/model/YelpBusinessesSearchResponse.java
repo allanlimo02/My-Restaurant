@@ -1,5 +1,5 @@
 
-package com.moringaschool.myresturant.ui;
+package com.moringaschool.myresturant.model;
 
 import java.util.List;
 import javax.annotation.Generated;

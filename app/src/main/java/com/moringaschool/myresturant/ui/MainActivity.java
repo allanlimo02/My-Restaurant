@@ -1,4 +1,4 @@
-package com.moringaschool.myresturant.model;
+package com.moringaschool.myresturant.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.*;
 //import android.widget.EditText;
 
 import com.moringaschool.myresturant.R;
+import com.moringaschool.myresturant.RestaurantListActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

@@ -1,6 +1,7 @@
-package com.moringaschool.myresturant;
+package com.moringaschool.myresturant.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,12 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.moringaschool.myresturant.ui.Business;
+import com.moringaschool.myresturant.R;
+import com.moringaschool.myresturant.model.Business;
+import com.moringaschool.myresturant.ui.RestaurantDetailActivity;
+import com.squareup.picasso.Picasso;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
@@ -17,6 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAdapter.RestaurantViewHolder> {
+
     private List<Business> mRestaurants;
     private Context mContext;
 
@@ -24,7 +31,6 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         mContext = context;
         mRestaurants = restaurants;
     }
-
 
     @Override
     public RestaurantListAdapter.RestaurantViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -43,23 +49,33 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         return mRestaurants.size();
     }
 
-    public class RestaurantViewHolder extends RecyclerView.ViewHolder {
+    public class RestaurantViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @BindView(R.id.restaurantImageView) ImageView mRestaurantImageView;
         @BindView(R.id.restaurantNameTextView)  TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
         private Context mContext;
 
-        public RestaurantViewHolder(View itemView) {
+        public RestaurantViewHolder(View itemView){
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener((View.OnClickListener) this);
         }
 
         public void bindRestaurant(Business restaurant) {
             mNameTextView.setText(restaurant.getName());
+            Picasso.get().load(restaurant.getImageUrl()).into(mRestaurantImageView);
             mCategoryTextView.setText(restaurant.getCategories().get(0).getTitle());
             mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
+        }
+        @Override
+        public void onClick(View view) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, RestaurantDetailActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("restaurants", Parcels.wrap(mRestaurants));
+            mContext.startActivity(intent);
         }
     }
 }

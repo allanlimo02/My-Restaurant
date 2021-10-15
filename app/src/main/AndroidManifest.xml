@@ -14,19 +14,19 @@
         <activity
             android:name=".ui.RestaurantDetailActivity"
             android:exported="true" />
-        <activity android:name=".model.RestaurantListActivity">
+        <activity android:name=".RestaurantListActivity">
             android:exported="true"
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.myresturant.model.MainActivity" />
+                android:value="com.moringaschool.myresturant.ui.MainActivity" />
         </activity>
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.moringaschool.myresturant.model.MainActivity" />
+            android:value="com.moringaschool.myresturant.ui.MainActivity" />
 
         <activity
-            android:name=".model.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

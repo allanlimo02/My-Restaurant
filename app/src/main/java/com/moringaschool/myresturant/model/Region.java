@@ -1,11 +1,14 @@
 
-package com.moringaschool.myresturant.ui;
+package com.moringaschool.myresturant.model;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 @Generated("jsonschema2pojo")
+@Parcel
 public class Region {
 
     @SerializedName("center")

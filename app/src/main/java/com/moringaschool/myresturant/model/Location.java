@@ -1,11 +1,14 @@
 
-package com.moringaschool.myresturant.ui;
+package com.moringaschool.myresturant.model;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 @Generated("jsonschema2pojo")
+@Parcel
 public class Location {
 
     @SerializedName("city")
@@ -137,6 +140,10 @@ public class Location {
         }
         Location rhs = ((Location) other);
         return ((((((((this.country == rhs.country)||((this.country!= null)&&this.country.equals(rhs.country)))&&((this.zipCode == rhs.zipCode)||((this.zipCode!= null)&&this.zipCode.equals(rhs.zipCode))))&&((this.address3 == rhs.address3)||((this.address3 != null)&&this.address3 .equals(rhs.address3))))&&((this.city == rhs.city)||((this.city!= null)&&this.city.equals(rhs.city))))&&((this.address2 == rhs.address2)||((this.address2 != null)&&this.address2 .equals(rhs.address2))))&&((this.address1 == rhs.address1)||((this.address1 != null)&&this.address1 .equals(rhs.address1))))&&((this.state == rhs.state)||((this.state!= null)&&this.state.equals(rhs.state))));
+    }
+    @Override
+    public String toString() {
+        return String.format("%s, %s, %s %s", this.address1, this.city, this.state, this.zipCode);
     }
 
 }
